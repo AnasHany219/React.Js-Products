@@ -1,0 +1,64 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+import { HiPlus } from "react-icons/hi2";
+import { Card, Button, Row, Col } from "react-bootstrap";
+import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
+
+const ProductList = ({ products, onDelete }) => {
+  return (
+    <>
+      <Row className="align-items-center my-4 pt-5">
+        <Col>
+          <h2 className="mb-0">Products</h2>
+        </Col>
+        <Col className="text-end">
+          <Button as={Link} to="/add-product">
+            <HiPlus />
+            Add New Product
+          </Button>
+        </Col>
+      </Row>
+
+      <Row xs={1} md={2} lg={3} className="g-4 mb-5">
+        {products.map((product) => (
+          <Col key={product.id}>
+            <Card className="h-100">
+              <Card.Img
+                variant="top"
+                src={product.imageURL || "https://via.placeholder.com/150"}
+                alt={product.name}
+                className="product-image"
+              />
+
+              <Card.Body>
+                <Card.Title className="d-flex justify-content-between">
+                  <strong>{product.name}</strong>
+                  <p>${product.price}</p>
+                </Card.Title>
+                <Card.Text></Card.Text>
+                <div className="d-flex justify-content-between">
+                  <Link to={`/products/${product.id}`}>
+                    <Button variant="primary" className="me-2">
+                      <FaEye /> View
+                    </Button>
+                  </Link>
+                  <Link to={`/products/${product.id}/edit`}>
+                    <Button variant="warning" className="me-2">
+                      <FaEdit /> Edit
+                    </Button>
+                  </Link>
+                  <Button variant="danger" onClick={() => onDelete(product.id)}>
+                    <FaTrash /> Delete
+                  </Button>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </>
+  );
+};
+
+export default ProductList;
