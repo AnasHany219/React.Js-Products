@@ -14,7 +14,7 @@ function Home({ products, categories }) {
       </Container>
 
       {/* Product Image Slider */}
-      <Carousel>
+      <Carousel interval={2000}>
         {products.map((product) => (
           <Carousel.Item key={product.id}>
             <img
