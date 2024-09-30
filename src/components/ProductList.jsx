@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { HiPlus } from "react-icons/hi2";
-import { Card, Button, Row, Col } from "react-bootstrap";
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
+import { Card, Button, Row, Col } from "react-bootstrap";
 
 const ProductList = ({ products, onDelete }) => {
+  const [visibleCount, setVisibleCount] = useState(9);
+
+  const handleShowMore = () => {
+    setVisibleCount((prevCount) => prevCount + 9);
+  };
+
+  const visibleProducts = products.slice(0, visibleCount);
+
   return (
     <>
       <Row className="align-items-center my-4 pt-5">
@@ -21,9 +29,9 @@ const ProductList = ({ products, onDelete }) => {
       </Row>
 
       <Row xs={1} md={2} lg={3} className="g-4 mb-5">
-        {products.map((product) => (
+        {visibleProducts.map((product) => (
           <Col key={product.id}>
-            <Card className="h-100">
+            <Card className="h-100 product-card">
               <Card.Img
                 variant="top"
                 src={product.imageURL || "https://via.placeholder.com/150"}
@@ -36,7 +44,6 @@ const ProductList = ({ products, onDelete }) => {
                   <strong>{product.name}</strong>
                   <p>${product.price}</p>
                 </Card.Title>
-                <Card.Text></Card.Text>
                 <div className="d-flex justify-content-between">
                   <Link to={`/products/${product.id}`}>
                     <Button variant="primary" className="me-2">
@@ -57,6 +64,14 @@ const ProductList = ({ products, onDelete }) => {
           </Col>
         ))}
       </Row>
+
+      {visibleCount < products.length && (
+        <div className="text-center my-4">
+          <Button variant="secondary" className="px-5" onClick={handleShowMore}>
+            Show More
+          </Button>
+        </div>
+      )}
     </>
   );
 };

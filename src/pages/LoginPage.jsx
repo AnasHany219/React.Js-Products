@@ -1,11 +1,12 @@
-// src/pages/LoginPage.js
 import React, { useState } from "react";
-import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+
+import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
+
 import { useAuth } from "../context/AuthContext";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState("anas@test.com");
+  const [username, setUsername] = useState("Anas");
   const [password, setPassword] = useState("123456789");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -18,8 +19,8 @@ const LoginPage = () => {
       return;
     }
 
-    if (username === "anas@test.com" && password === "123456789") {
-      login();
+    if (username === "Anas" && password === "123456789") {
+      login(username);
       navigate("/products");
     } else {
       setError("Invalid username or password.");
@@ -33,7 +34,6 @@ const LoginPage = () => {
           <div className="p-4 bg-light rounded shadow-sm">
             <h2 className="text-center mb-4">Login</h2>
             {error && <Alert variant="danger">{error}</Alert>}{" "}
-            {/* Show error alert */}
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import productsData from "./data/productsData";
 
+import Home from "./components/Home";
 import AppLayout from "./components/AppLayout";
 import ProductList from "./components/ProductList";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -40,7 +41,8 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route index element={<Navigate to="products" replace />} />
+            <Route index element={<Navigate to="home" replace />} />
+            <Route path="home" element={<Home />} />
             <Route
               path="products"
               element={

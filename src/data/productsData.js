@@ -6,8 +6,7 @@ const products = [
     quantity: 15,
     description: "High-quality wireless headphones with noise cancellation.",
     category: "Electronics",
-    imageURL:
-      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageURL: "/assets/images/img-01.avif",
   },
   {
     id: 2,
@@ -17,8 +16,7 @@ const products = [
     description:
       "Experience stunning picture quality with this 4K Ultra HD TV.",
     category: "Electronics",
-    imageURL:
-      "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8NEslMjBVbHRyYSUyMEhEJTIwVFZ8ZW58MHx8MHx8fDA%3D",
+    imageURL: "/assets/images/img-02.avif",
   },
   {
     id: 3,
@@ -27,8 +25,7 @@ const products = [
     quantity: 5,
     description: "Powerful gaming laptop with high-performance graphics.",
     category: "Computers",
-    imageURL:
-      "https://images.unsplash.com/photo-1684127987312-43455fd95925?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageURL: "/assets/images/img-03.avif",
   },
   {
     id: 4,
@@ -37,8 +34,7 @@ const products = [
     quantity: 20,
     description: "Stay connected and track your fitness with this smartwatch.",
     category: "Wearables",
-    imageURL:
-      "https://images.unsplash.com/photo-1523395451704-22c6fb0522cf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageURL: "/assets/images/img-04.avif",
   },
   {
     id: 5,
@@ -47,8 +43,7 @@ const products = [
     quantity: 30,
     description: "Portable Bluetooth speaker with deep bass and clear sound.",
     category: "Accessories",
-    imageURL:
-      "https://images.unsplash.com/photo-1518671678551-911467efe539?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageURL: "/assets/images/img-05.avif",
   },
   {
     id: 6,
@@ -57,8 +52,7 @@ const products = [
     quantity: 50,
     description: "Ergonomic wireless mouse for comfortable use.",
     category: "Accessories",
-    imageURL:
-      "https://images.unsplash.com/photo-1707592691247-5c3a1c7ba0e3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageURL: "/assets/images/img-06.avif",
   },
   {
     id: 7,
@@ -67,8 +61,7 @@ const products = [
     quantity: 25,
     description: "Fast and portable SSD for quick data access.",
     category: "Storage",
-    imageURL:
-      "https://plus.unsplash.com/premium_photo-1721133221361-4f2b2af3b6fe?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageURL: "/assets/images/img-07.avif",
   },
   {
     id: 8,
@@ -77,8 +70,7 @@ const products = [
     quantity: 40,
     description: "High-definition webcam for clear video calls.",
     category: "Computers",
-    imageURL:
-      "https://images.unsplash.com/photo-1629429407756-446d66f5b24e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageURL: "/assets/images/img-08.avif",
   },
   {
     id: 9,
@@ -87,8 +79,7 @@ const products = [
     quantity: 10,
     description: "Connect and control all your smart devices with this hub.",
     category: "Smart Home",
-    imageURL:
-      "https://plus.unsplash.com/premium_photo-1716603741742-db515ca0a8e6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageURL: "/assets/images/img-09.avif",
   },
   {
     id: 10,
@@ -97,8 +88,163 @@ const products = [
     quantity: 12,
     description: "Advanced electric toothbrush with smart features.",
     category: "Health & Beauty",
-    imageURL:
-      "https://images.unsplash.com/photo-1553091844-4204b59e3661?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageURL: "/assets/images/img-10.avif",
+  },
+  {
+    id: 11,
+    name: "Yoga Mat",
+    price: 24.99,
+    quantity: 35,
+    description: "Non-slip yoga mat perfect for all fitness levels.",
+    category: "Fitness",
+    imageURL: "/assets/images/img-11.avif",
+  },
+  {
+    id: 12,
+    name: "Running Shoes",
+    price: 89.99,
+    quantity: 20,
+    description: "Lightweight and breathable running shoes for outdoor runs.",
+    category: "Footwear",
+    imageURL: "/assets/images/img-12.avif",
+  },
+  {
+    id: 13,
+    name: "Smart Refrigerator",
+    price: 1299.99,
+    quantity: 3,
+    description: "High-tech refrigerator with smart home integration.",
+    category: "Home Appliances",
+    imageURL: "/assets/images/img-13.avif",
+  },
+  {
+    id: 14,
+    name: "Air Purifier",
+    price: 149.99,
+    quantity: 18,
+    description: "Efficient air purifier with HEPA filter for clean air.",
+    category: "Home Appliances",
+    imageURL: "/assets/images/img-14.avif",
+  },
+  {
+    id: 15,
+    name: "Face Moisturizer",
+    price: 19.99,
+    quantity: 40,
+    description: "Hydrating face moisturizer with SPF for daily use.",
+    category: "Health & Beauty",
+    imageURL: "/assets/images/img-15.avif",
+  },
+  {
+    id: 16,
+    name: "Coffee Maker",
+    price: 49.99,
+    quantity: 25,
+    description: "Brew your favorite coffee with this automatic coffee maker.",
+    category: "Home Appliances",
+    imageURL: "/assets/images/img-16.avif",
+  },
+  {
+    id: 17,
+    name: "Standing Desk",
+    price: 299.99,
+    quantity: 10,
+    description: "Adjustable standing desk for comfortable work environments.",
+    category: "Furniture",
+    imageURL: "/assets/images/img-17.avif",
+  },
+  {
+    id: 18,
+    name: "Fitness Tracker",
+    price: 89.99,
+    quantity: 35,
+    description:
+      "Track your activity and health stats with this fitness tracker.",
+    category: "Wearables",
+    imageURL: "/assets/images/img-18.avif",
+  },
+  {
+    id: 19,
+    name: "Electric Kettle",
+    price: 39.99,
+    quantity: 50,
+    description: "Fast-boiling electric kettle for your hot beverage needs.",
+    category: "Home Appliances",
+    imageURL: "/assets/images/img-19.avif",
+  },
+  {
+    id: 20,
+    name: "Digital Camera",
+    price: 499.99,
+    quantity: 8,
+    description: "Capture high-quality images with this 20MP digital camera.",
+    category: "Electronics",
+    imageURL: "/assets/images/img-20.avif",
+  },
+  {
+    id: 21,
+    name: "Air Fryer",
+    price: 99.99,
+    quantity: 18,
+    description: "Healthy cooking with this oil-free air fryer.",
+    category: "Home Appliances",
+    imageURL: "/assets/images/img-21.avif",
+  },
+  {
+    id: 22,
+    name: "Noise-Cancelling Earbuds",
+    price: 149.99,
+    quantity: 40,
+    description: "Wireless earbuds with active noise cancellation.",
+    category: "Wearables",
+    imageURL: "/assets/images/img-22.avif",
+  },
+  {
+    id: 23,
+    name: "Smart Thermostat",
+    price: 199.99,
+    quantity: 12,
+    description:
+      "Control your home temperature remotely with this smart thermostat.",
+    category: "Smart Home",
+    imageURL: "/assets/images/img-23.avif",
+  },
+  {
+    id: 24,
+    name: "Kitchen Knife Set",
+    price: 79.99,
+    quantity: 22,
+    description: "Premium stainless steel kitchen knife set.",
+    category: "Kitchen",
+    imageURL: "/assets/images/img-24.avif",
+  },
+  {
+    id: 25,
+    name: "Robot Vacuum Cleaner",
+    price: 299.99,
+    quantity: 5,
+    description: "Smart robot vacuum cleaner for automated cleaning.",
+    category: "Smart Home",
+    imageURL: "/assets/images/img-25.avif",
+  },
+  {
+    id: 26,
+    name: "Smart Light Bulbs",
+    price: 29.99,
+    quantity: 60,
+    description: "Control the lighting of your home with smart light bulbs.",
+    category: "Smart Home",
+    imageURL: "/assets/images/img-26.avif",
+  },
+  {
+    id: 27,
+    name: "Office Chair",
+    price: 149.99,
+    quantity: 10,
+    description:
+      "Ergonomic office chair with lumbar support for long hours of comfort.",
+    category: "Furniture",
+    imageURL: "/assets/images/img-27.avif",
   },
 ];
 

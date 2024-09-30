@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Container, Row, Col, Button, Card, Breadcrumb } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Card,
+  Breadcrumb,
+  Modal,
+} from "react-bootstrap";
 
 const ProductPage = ({ products, onDelete }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const product = products.find((p) => p.id === parseInt(id));
+
+  const [showModal, setShowModal] = useState(false);
 
   if (!product) {
     return (
@@ -24,6 +34,9 @@ const ProductPage = ({ products, onDelete }) => {
     navigate("/products");
   };
 
+  const handleImageClick = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
   return (
     <Container className="my-5 pt-5">
       <Breadcrumb>
@@ -39,7 +52,8 @@ const ProductPage = ({ products, onDelete }) => {
               src={product.imageURL}
               alt={product.name}
               className="img-fluid rounded-top"
-              style={{ height: "300px", objectFit: "cover" }}
+              style={{ height: "300px", objectFit: "cover", cursor: "pointer" }}
+              onClick={handleImageClick} // Add onClick event
             />
             <Card.Body>
               <Card.Title className="display-6 mb-3">{product.name}</Card.Title>
@@ -67,6 +81,21 @@ const ProductPage = ({ products, onDelete }) => {
           </Card>
         </Col>
       </Row>
+
+      {/* Modal for displaying larger image */}
+      <Modal show={showModal} onHide={handleCloseModal} centered size="xl">
+        <Modal.Header closeButton>
+          <Modal.Title>{product.name}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="text-center">
+          <img
+            src={product.imageURL}
+            alt={product.name}
+            className="img-fluid"
+            style={{ maxHeight: "80vh", objectFit: "contain" }}
+          />
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 };

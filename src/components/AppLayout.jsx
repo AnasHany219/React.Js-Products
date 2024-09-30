@@ -1,8 +1,9 @@
-// src/components/AppLayout.js
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
 import { Container } from "react-bootstrap";
+
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const AppLayout = () => {
   return (
@@ -11,6 +12,7 @@ const AppLayout = () => {
       <Container className="mt-5">
         <Outlet />
       </Container>
+      <Footer />
     </>
   );
 };

@@ -11,19 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/* 
-.image-container {
-  width: 150px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-} */
 
+/* product */
 .product-image {
   height: 100%;
-  max-height: 150px;
+  max-height: 200px;
   height: auto;
   object-fit: cover;
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover .card-body {
+  border-top: 3px solid #007bff;
+}
+
+/* category */
+.category-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hover-card {
+  background-color: #f8f9fa;
+}
+
+/* footer */
+.footer a:hover {
+  text-decoration: none;
 }
