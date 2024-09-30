@@ -39,7 +39,7 @@ const ProductForm = ({ product = {}, onSave }) => {
   return (
     <Container
       className="d-flex justify-content-center align-items-center"
-      style={{ height: "94vh" }}
+      style={{ height: "100vh" }}
     >
       <Row className="justify-content-center w-100">
         <Col>

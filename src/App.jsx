@@ -17,6 +17,7 @@ import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   const [products, setProducts] = useState(productsData);
+  const categories = [...new Set(products.map((product) => product.category))];
 
   const handleDelete = (id) => {
     const confirmDelete = window.confirm(
@@ -42,7 +43,10 @@ function App() {
             }
           >
             <Route index element={<Navigate to="home" replace />} />
-            <Route path="home" element={<Home />} />
+            <Route
+              path="home"
+              element={<Home products={products} categories={categories} />}
+            />
             <Route
               path="products"
               element={

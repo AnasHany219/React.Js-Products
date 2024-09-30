@@ -1,13 +1,8 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
-import { Carousel, Container, Row, Col, Card } from "react-bootstrap";
+import { Carousel, Container, Row, Col, Card, Button } from "react-bootstrap";
 
-import products from "../data/productsData";
-
-function Home() {
-  const categories = [...new Set(products.map((product) => product.category))];
-
+function Home({ products, categories }) {
   return (
     <div className="mt-5 pt-5">
       {/* Welcome Section */}
@@ -38,7 +33,32 @@ function Home() {
         ))}
       </Carousel>
 
-      {/* Category Section */}
+      {/* Featured Products Section */}
+      <Container className="my-5">
+        <h2 className="mb-4">Featured Products</h2>
+        <Row xs={1} md={2} lg={3}>
+          {products.slice(0, 3).map((product) => (
+            <Col key={product.id} className="mb-4">
+              <Card className="shadow border-0 product-card">
+                <Card.Img
+                  variant="top"
+                  src={product.imageURL || "https://via.placeholder.com/150"}
+                  alt={product.name}
+                  className="product-image"
+                />
+                <Card.Body>
+                  <Card.Title>{product.name}</Card.Title>
+                  <Card.Text>{product.description}</Card.Text>
+                  <Link to={`/products/${product.id}`}>
+                    <Button variant="primary">View Details</Button>
+                  </Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
       <Container className="my-5">
         <h2 className="mb-4">Categories</h2>
         <Row xs={1} md={2} lg={3}>
@@ -55,6 +75,42 @@ function Home() {
               </Card>
             </Col>
           ))}
+        </Row>
+      </Container>
+
+      <Container className="my-5 text-center">
+        <h2 className="mb-4">What Our Customers Say</h2>
+        <Row xs={1} md={2} lg={3}>
+          <Col>
+            <Card className="testimonial-card shadow border-0">
+              <Card.Body>
+                <Card.Text>
+                  "Great quality products! Highly recommend."
+                </Card.Text>
+                <Card.Footer className="text-muted">- Jane Doe</Card.Footer>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card className="testimonial-card shadow border-0">
+              <Card.Body>
+                <Card.Text>
+                  "Amazing customer service and fast shipping!"
+                </Card.Text>
+                <Card.Footer className="text-muted">- John Smith</Card.Footer>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card className="testimonial-card shadow border-0">
+              <Card.Body>
+                <Card.Text>"I'm very satisfied with my purchase!"</Card.Text>
+                <Card.Footer className="text-muted">
+                  - Emily Johnson
+                </Card.Footer>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
       </Container>
     </div>

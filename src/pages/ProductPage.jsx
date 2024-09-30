@@ -45,7 +45,7 @@ const ProductPage = ({ products, onDelete }) => {
       </Breadcrumb>
 
       <Row className="justify-content-center">
-        <Col md={8}>
+        <Col>
           <Card className="shadow-lg">
             <Card.Img
               variant="top"
